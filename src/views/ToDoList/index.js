@@ -1,4 +1,5 @@
 import InputTask from "./components/InputTask"
+import Task from './components/Task'
 import {useState} from "react"
 
 function ToDoList(){
@@ -14,15 +15,23 @@ function ToDoList(){
         //const copyArray = tasks.slice()
         // copyArray.push(currTask)
         // setTasks(copyArray)
-        console.log(tasks)
         setTasks([...tasks, currTask]) //con spread operator
+        setCurrTask("")
+    }
+
+    function handleDelete (event){
+        console.log(event.target.id)
+        const filteredTasks = tasks.filter((task, index)=>{
+            return event.target.id != index
+        })
+        setTasks(filteredTasks)
     }
     return(
         <section>
             <h1>To Do List</h1>
-            <InputTask handleAddTask={handleAddTask} handleChange={handleChange}/>
+            <InputTask handleAddTask={handleAddTask} handleChange={handleChange} currTask={currTask}/>
             <ol>
-            {tasks.map(task => <li>{task}</li>)}
+            {tasks.map((task, index) => <Task key={index} task={task} handleDelete={handleDelete} taskId={index} />)}
             </ol>
         </section>
     )
