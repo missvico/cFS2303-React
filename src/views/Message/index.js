@@ -19,7 +19,7 @@ function Message(){
         })
     }
     return(
-        <section>
+        <section id="contact">
             <Form handleChange={handleChange} handleSubmit={handleSubmit}/>
             {
                 successMessage && 

@@ -29,7 +29,7 @@ function StarWarsCharacters(){
     [currPage])
 
     return(
-        <section>
+        <section id="starwarscharacters" style={{backgroundColor: "lightgrey"}}>
             <h1>Star Wars Characters</h1>
             <Pagination currPage={currPage} setCurrPage={setCurrPage} totalPages={totalPages}/>
             {

@@ -27,7 +27,7 @@ function ToDoList(){
         setTasks(filteredTasks)
     }
     return(
-        <section>
+        <section id="todolist" style={{backgroundColor: "lightpink"}}>
             <h1>To Do List</h1>
             <InputTask handleAddTask={handleAddTask} handleChange={handleChange} currTask={currTask}/>
             <ol>

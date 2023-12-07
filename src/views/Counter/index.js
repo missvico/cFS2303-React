@@ -18,7 +18,7 @@ function Counter(){
     }
 
     return(
-        <section>
+        <section id="counter" style={{backgroundColor: "skyblue"}}>
             <h1>Counter</h1>
             <Button handleClick={handlSubs} symbol="-"/>
             <Number number={count}/>

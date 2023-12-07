@@ -15,7 +15,6 @@ function Pagination({currPage, setCurrPage, totalPages}) {
             </li>
         )
     }
-    console.log(currPage)
 
 
   return (
