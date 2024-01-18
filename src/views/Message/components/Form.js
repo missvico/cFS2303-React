@@ -1,4 +1,5 @@
-function Form({handleChange, handleSubmit}) {
+function Form({handleChange, handleSubmit, messageData}) {
+  const disabled = !(messageData.email && messageData.firstName && messageData.lastName && messageData.message)
   return (
     <form onSubmit={handleSubmit}>
       <div class="mb-3">
@@ -54,7 +55,7 @@ function Form({handleChange, handleSubmit}) {
           I want to receive news!
         </label>
       </div>
-      <button type="submit" class="btn btn-primary">
+      <button disabled={disabled} type="submit" class="btn btn-primary">
         Submit
       </button>
     </form>

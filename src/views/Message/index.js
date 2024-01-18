@@ -5,6 +5,7 @@ import axios from 'axios'
 function Message(){
     const [messageData, setMessageData] = useState({email: "", firstName: "", lastName: "", message:"", acceptedMailing: true})
     const [successMessage, setSuccessMesage] =useState(false)
+    
     function handleChange(event){
         const value = event.target.type == "checkbox"? event.target.checked : event.target.value
         const property = event.target.id
@@ -18,9 +19,11 @@ function Message(){
             setSuccessMesage(true)
         })
     }
+
+
     return(
         <section id="contact">
-            <Form handleChange={handleChange} handleSubmit={handleSubmit}/>
+            <Form handleChange={handleChange} handleSubmit={handleSubmit} messageData={messageData}/>
             {
                 successMessage && 
                 <div class="alert alert-success" role="alert">
